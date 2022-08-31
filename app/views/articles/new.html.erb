@@ -1,0 +1,25 @@
+<div class="container">
+  <h2>Welcome to Add New Article</h2>
+  <%= form_for @articles do |f| %>
+    <div class="mb-3">
+      <%= f.label :Title, {class: "form-label"} %>
+      <%= f.text_field :title, { class: "form-control", placeholder: "Description" } %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :Body, {class: "form-label"} %>
+      <%= f.text_area :body, { class: "form-control", placeholder: "Description" } %>
+    </div>
+    <div class="mb-3">
+      <%= f.label :Image, {class: "form-label"} %>
+      <%= f.file_field :image, { class: "form-control", placeholder: "Description" } %>
+    </div>  
+    <div class="mb-3">
+      <%= f.label :User_ID, {class: "form-label"} %>
+      <%= f.text_field :user_id, { class: "form-control", placeholder: "Description" } %> 
+    </div>
+    <div class="mb-3">
+      <%= f.submit "Update", class: "btn btn-primary" %>
+      <%= link_to "Back", :back, class: "btn btn-info" %>
+    </div>
+  <% end %>
+</div>

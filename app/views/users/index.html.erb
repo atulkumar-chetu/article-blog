@@ -1,0 +1,14 @@
+<h2>Welcome to Users Page</h2>
+
+  <%= link_to("Add New User", new_user_path, class: "btn btn-primary") %>
+<div class="container">
+  <% @users.each do |f| %>
+  <div class="card mb-3 a_card" style="width: 18rem;", align="center">
+    <div class="card-body">
+      <h3 class="card-title"><%= f.name %></h3>
+      <p class="card-text"><%= f.email %></p>
+      <%= link_to('Show', user_path(f) , class: "btn btn-primary") %>
+    </div>
+  </div>
+  <% end %>
+</div>

@@ -1,0 +1,22 @@
+<div class="container">
+	<div>
+		<% if @articles.image.attached? %>
+		<%= image_tag(@articles.image) %>
+		<% end %>
+	</div>
+	<div>
+		<%= @articles.title %>
+	</div>
+	<div>
+		<%= @articles.body %>
+	</div>
+	<div>
+		<small>Created By:- <%= @articles.user.name %></small>
+	</div>
+	<div class="btn-group mb-3" role="group" aria-label="...">
+		<%= link_to('Edit', edit_article_path , class: "btn btn-primary") %>
+		<%= link_to "Delete", article_path ,data: { method: :delete, confirm: "Are you sure?"
+	    }, class: "btn btn-danger" %>
+		<%= link_to "Back", :back, class: "btn btn-info" %>
+	</div>
+</div>
